@@ -16,6 +16,7 @@
 		B060E11F1F1CD1B600F841B6 /* TodoTVController.m in Sources */ = {isa = PBXBuildFile; fileRef = B060E11D1F1CD1B600F841B6 /* TodoTVController.m */; };
 		B060E1211F1CD92800F841B6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B060E1201F1CD92800F841B6 /* Info.plist */; };
 		B060E1301F1CE5B500F841B6 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B060E12F1F1CE5B500F841B6 /* data.json */; };
+		D84E14291F1EB30E00252829 /* 200.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D84E14281F1EB30E00252829 /* 200.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B060E11D1F1CD1B600F841B6 /* TodoTVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodoTVController.m; path = Controller/TodoTVController.m; sourceTree = "<group>"; };
 		B060E1201F1CD92800F841B6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
 		B060E12F1F1CE5B500F841B6 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = Documents/data.json; sourceTree = "<group>"; };
+		D84E14281F1EB30E00252829 /* 200.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 200.jpeg; path = ../../../Downloads/200.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B060E12F1F1CE5B500F841B6 /* data.json */,
+				D84E14281F1EB30E00252829 /* 200.jpeg */,
 			);
 			name = Documents;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B060E1211F1CD92800F841B6 /* Info.plist in Resources */,
+				D84E14291F1EB30E00252829 /* 200.jpeg in Resources */,
 				B060E0EB1F1CB2DE00F841B6 /* Assets.xcassets in Resources */,
 				B060E0E91F1CB2DE00F841B6 /* Main.storyboard in Resources */,
 				B060E1301F1CE5B500F841B6 /* data.json in Resources */,

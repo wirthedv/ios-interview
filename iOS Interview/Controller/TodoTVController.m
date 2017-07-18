@@ -63,15 +63,6 @@
 
 @implementation TodoTVController
 
--(void)record {
-    [[NSUserDefaults standardUserDefaults] setObject:self.todoList forKey:@"todoList"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
--(void)restore {
-    self.todoList = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"todoList"]];
-}
-
 
 - (void)setUpToolbar {
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -87,8 +78,6 @@
         
         _todoList = [[NSMutableArray alloc] init];
         _todoList = [NSJSONSerialization JSONObjectWithData:content options:NSJSONReadingMutableContainers error:nil];
-        
-        [self record];
     }
 }
 
@@ -100,17 +89,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"todoList"] count] < 2) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"todoList"];
-        [self loadTodoList];
-    }
-    
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"todoList"] != nil) {
-        [self restore];
-    } else {
-        [self loadTodoList];
-    }
-    
+    [self loadTodoList];
     [self setUpToolbar];
 }
 
@@ -189,7 +168,9 @@
     cell.todoLabel.textColor = kColorBlack;
     cell.todoLabel.text = todoElement;
     cell.itemText.text = [self.todoList objectAtIndex:indexPath.row];
-    
+    NSURL *imageUrl = [NSURL URLWithString:@"https://lorempixel.com/400/200/"];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+    cell.imageView.image = [UIImage imageWithData:imageData];
     return cell;
 }
 
@@ -198,7 +179,6 @@
     [self.todoList removeObjectAtIndex:fromIndexPath.row];
     [self.todoList insertObject:stringToMove atIndex:toIndexPath.row];
     
-    [self record];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -210,7 +190,6 @@
         [self.todoList removeObjectAtIndex: indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
-        [self record];
     }
 }
 

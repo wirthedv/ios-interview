@@ -50,6 +50,8 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *itemText;
 
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
 // Other properties
 
 
