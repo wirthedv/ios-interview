@@ -48,6 +48,7 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="b1p-Dd-qy1" id="pga-98-3Li"/>
+                            <outlet property="delegate" destination="b1p-Dd-qy1" id="Usw-tc-Lm3"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="rvS-gl-y0n"/>
