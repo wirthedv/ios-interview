@@ -1,0 +1,45 @@
+//
+// Prefix header for all source files of the 'Notdienst' target in the 'Notdienst' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+
+	// Imports of definition header files
+	#import	"DefColors.h"
+#endif
+
+
+//==============================================================================
+#pragma mark -
+#pragma mark Special strings and constants
+//==============================================================================
+
+/**
+ *	Macro for an empty string
+ */
+#define kEmptyString @""
+/**
+ *	Macro for the standard time of UIView animations
+ */
+#define kStandardAnimationTime 0.5
+
+
+//==============================================================================
+#pragma mark -
+#pragma mark Definition of custom logs
+//==============================================================================
+
+// Set 'Other C Flags' (Target-Build) to '-DDEBUGGING' (ONLY for debug configuration!)
+#ifdef DEBUGGING
+
+// Debug definitions
+#define QLog(fmt, ...)  NSLog(@"%s Quirin: " fmt, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+
+#else
+
+// Release definitions
+#define QLog(...)
+
+#endif
