@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bII-2Y-fVP">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bII-2Y-fVP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,26 +26,24 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Todolist Item Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVu-Sg-zu1">
-                                            <rect key="frame" x="16" y="23.5" width="351" height="20.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="200.png" translatesAutoresizingMaskIntoConstraints="NO" id="s1o-qh-wi4">
+                                            <rect key="frame" x="249" y="0.0" width="118" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="9yc-gx-gj6"/>
+                                                <constraint firstAttribute="width" constant="118" id="fUj-yH-hcN"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Todolist Item Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVu-Sg-zu1">
+                                            <rect key="frame" x="16" y="12" width="225" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="200.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="s1o-qh-wi4">
-                                            <rect key="frame" x="257" y="0.0" width="118" height="44"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="9Xn-hp-ZOP"/>
-                                                <constraint firstAttribute="width" constant="118" id="Kw1-5H-QUg"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="s1o-qh-wi4" firstAttribute="bottom" secondItem="aVu-Sg-zu1" secondAttribute="bottom" id="2PA-WT-tYm"/>
-                                        <constraint firstAttribute="bottom" secondItem="s1o-qh-wi4" secondAttribute="bottom" id="7lQ-o8-qcl"/>
-                                        <constraint firstAttribute="trailing" secondItem="s1o-qh-wi4" secondAttribute="trailing" id="HHW-oe-zdg"/>
-                                        <constraint firstItem="s1o-qh-wi4" firstAttribute="top" secondItem="daw-OS-Jqg" secondAttribute="top" id="uoC-AQ-nie"/>
-                                        <constraint firstItem="s1o-qh-wi4" firstAttribute="centerY" secondItem="daw-OS-Jqg" secondAttribute="centerY" id="wK8-LD-XcJ"/>
+                                        <constraint firstItem="aVu-Sg-zu1" firstAttribute="centerY" secondItem="daw-OS-Jqg" secondAttribute="centerY" id="0yR-ca-lPi"/>
+                                        <constraint firstAttribute="trailing" secondItem="s1o-qh-wi4" secondAttribute="trailing" constant="16" id="bX6-IW-7UW"/>
+                                        <constraint firstItem="aVu-Sg-zu1" firstAttribute="leading" secondItem="daw-OS-Jqg" secondAttribute="leadingMargin" constant="16" id="uhy-SQ-n1B"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -65,7 +64,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nP-03-TEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808.79999999999995" y="238.83058470764618"/>
+            <point key="canvasLocation" x="957.60000000000002" y="238.83058470764618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y5t-76-q3j">
@@ -85,6 +84,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="200.jpeg" width="400" height="200"/>
+        <image name="200.png" width="400" height="200"/>
     </resources>
 </document>

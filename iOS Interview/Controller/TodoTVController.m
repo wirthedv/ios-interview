@@ -36,13 +36,13 @@
 
 // IBOutlet properties
 /**
- *	Table view showing an overview of the chapters within the Emergency Service guideline
+ *	Table view showing an overview
  */
 @property (nonatomic, weak) IBOutlet UITableView *todoTV;
 
 // Other properties
 /**
- *	Stores information about the available chapters within the Emergency Service guideline
+ *	Stores information
  */
 @property (nonatomic, strong) NSMutableArray *todoList;
 /**
@@ -50,9 +50,8 @@
  */
 @property (nonatomic, strong) NSIndexPath *selectedCell;
 
-@property (nonatomic, strong) NSFileManager *fileManager;
-
 // Instance methods
+
 
 @end
 
@@ -63,10 +62,8 @@
 
 @implementation TodoTVController
 
-
 - (void)setUpToolbar {
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    self.navigationItem.title = @"To Do List";
+    self.navigationItem.title = @"Grocery List";
 }
 
 
@@ -91,6 +88,8 @@
     
     [self loadTodoList];
     [self setUpToolbar];
+    
+    self.tableView.allowsSelection = NO;
 }
 
 /**
@@ -161,18 +160,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TVCell *cell = (TVCell *)[tableView dequeueReusableCellWithIdentifier:TV_CELL_PROTOTYPE_ID];
     cell.tag = indexPath.row;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSString *todoElement = self.todoList[indexPath.row];
     
     // Configuring cell specific settings
     cell.todoLabel.textColor = kColorBlack;
     cell.todoLabel.text = todoElement;
-    cell.itemText.text = [self.todoList objectAtIndex:indexPath.row];
+    
     NSURL *imageUrl = [NSURL URLWithString:@"https://lorempixel.com/400/200/"];
     NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
     cell.imageView.image = [UIImage imageWithData:imageData];
     return cell;
 }
+
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     NSString *stringToMove = [self.todoList objectAtIndex:fromIndexPath.row];
@@ -215,9 +216,8 @@
 #pragma mark Storyboard Segue
 //==============================================================================
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    
 }
 
 //==============================================================================
