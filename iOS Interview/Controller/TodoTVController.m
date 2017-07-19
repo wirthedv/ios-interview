@@ -36,21 +36,19 @@
 
 // IBOutlet properties
 /**
- *	Table view showing an overview of the chapters within the Emergency Service guideline
+ *	Table view showing an overview
  */
 @property (nonatomic, weak) IBOutlet UITableView *todoTV;
 
 // Other properties
 /**
- *	Stores information about the available chapters within the Emergency Service guideline
+ *	Stores information
  */
 @property (nonatomic, strong) NSMutableArray *todoList;
 /**
  *	References the index path of the last selected cell within the property @ref todoTV respectively @ref chapterCV
  */
 @property (nonatomic, strong) NSIndexPath *selectedCell;
-
-@property (nonatomic, strong) NSFileManager *fileManager;
 
 // Instance methods
 
